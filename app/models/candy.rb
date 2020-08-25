@@ -13,7 +13,7 @@ class Candy < ApplicationRecord
     end
 
     def avg_score
-        reviews.average(:score).round(2).to_f
+        reviews.any? ? reviews.average(:score).round(2).to_f : 0
     end
 
 end
