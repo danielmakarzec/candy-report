@@ -1,0 +1,50 @@
+$colWidth: 300px;
+$colNum: 5;
+
+.grid{
+    width: 60vw;
+    column-count: 3;
+    column-gap: 2px;
+    // line-height: 0;
+    // background: aquamarine;
+    margin: 0 auto;
+}
+.row{
+    display: inline-block;
+    width: 100%;
+    margin: 1em 0;
+}
+.grid-item {
+    width: $colWidth;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    background: lightgrey;
+    box-shadow: 0px 10px 20px -1px rgba(0,0,0,.2);
+}
+.card--name{
+    padding: 12px 0;
+}
+.card--img{
+    width: 100%;
+    background: white;
+}
+.card--score{
+    padding: 8px 0;
+}
+.card--link{
+    width: 100%;
+    background: rgba(240, 40, 133, 0.8);
+    padding: 0.5em 0;
+    text-align: center;
+    border-radius: 0 0 1em 1em;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        opacity: 9;
+        background: deeppink;
+    }
+}

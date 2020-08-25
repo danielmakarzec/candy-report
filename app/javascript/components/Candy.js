@@ -1,16 +1,18 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+// import img from 'images/candies/16-mr.jpg';
 
 const Candy = ({data}) => {
+    // console.log(data.image_url)
     return (
-        <div className='card'>
-            <h2 className='card--name'>{data.name}</h2>
-            <img src='https://i.pinimg.com/originals/f8/67/ed/f867ed50da075666748b655445b48022.jpg' alt=""/>
-            <div className="card--score">
-                RATING: {data.avg_score}
-            </div>
-            <div className="card--link">
-                <Link to={`candies/${data.slug}`}>go to candy view</Link>
+        <div className="row">
+            <div className='card grid-item'>
+                <h2 className='card--name'>{data.name}</h2>
+                <img className='card--img' src={require(`images/candies/${data.image_url}`)} alt=''/>
+                <div className="card--score">
+                    RATING: {data.avg_score}
+                </div>
+                    <Link className="card--link" to={`candies/${data.slug}`}>more</Link>
             </div>
         </div>
     )

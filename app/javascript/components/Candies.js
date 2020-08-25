@@ -6,6 +6,23 @@ import Candy from './Candy'
 
 const Candies = () => {
     const [candies, setCandies] = useState([])
+    const [gridSize, setGridSize] = useState(window.innerWidth * 0.6 )
+    const [numOfColumns, setCol] = useState(gridSize / 350);
+    
+    // controll the number of columns in the grid
+    useEffect(() => {
+        function handleResize() {
+            let newGridSize = document.getElementById('grid') ? document.getElementById('grid').offsetWidth : 1;
+            let newNumOfCol = parseInt(newGridSize / 350);
+            setCol(newNumOfCol)
+        }
+    
+        window.addEventListener("resize", handleResize);
+    
+        handleResize();
+    
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(()=>{
         // get candies from actionrecord
@@ -22,11 +39,13 @@ const Candies = () => {
     return (
         <>
             <Header />
+            <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
             {
                 candies.map( candy => {
                     return <Candy key={candy.attributes.slug} data={candy.attributes} />
                 })
             }
+            </div>
         </>
     )
 }
