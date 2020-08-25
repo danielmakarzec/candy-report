@@ -2,7 +2,7 @@ candies = [
   {
     id: 1,
     name: "Skittles",
-    file: "1.skittles.jpg"
+    file: "1-skittles.jpg"
   },
   {
     id: 2,
