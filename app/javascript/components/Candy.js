@@ -1,9 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-// import img from 'images/candies/16-mr.jpg';
 
 const Candy = ({data}) => {
-    // console.log(data.image_url)
     return (
         <div className="row">
             <div className='card grid-item'>
