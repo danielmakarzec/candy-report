@@ -1,16 +1,15 @@
 .header{
-    background-image: linear-gradient( 30deg, lightpink, lightgoldenrodyellow );
+    background-image: linear-gradient( 30deg, lightpink, aquamarine );
     padding: 1em 2em;
     margin-bottom: 5%;
     text-align: center;
     h1{
         font-size: 4em;
+        color: rgba(0,0,0,0.8);
     }
     h3{
         font-size: 2em;
         font-weight: 100;
+        color: rgba(0,0,0,0.8);
     }
-}
-strong{
-    color: lightgoldenrodyellow
 }

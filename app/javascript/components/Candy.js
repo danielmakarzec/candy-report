@@ -8,7 +8,7 @@ const Candy = ({data}) => {
                 <h2 className='card--name'>{data.name}</h2>
                 <img className='card--img' src={require(`images/candies/${data.image_url}`)} alt=''/>
                 <div className="card--score">
-                    RATING: {data.avg_score}
+                    RATING: {data.avg_score || 0}
                 </div>
                     <Link className="card--link" to={`candies/${data.slug}`}>more</Link>
             </div>

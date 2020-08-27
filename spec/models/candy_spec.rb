@@ -26,7 +26,7 @@ RSpec.describe Candy, type: :model do
   # methods
   describe "#slugify" do
     it "should return serialized slug based on the name on a candy" do
-      expect(candy.slug).to eq('candy-name')
+      expect(candy.slug).to eq 'candy-name'
     end
   end
 
@@ -35,7 +35,16 @@ RSpec.describe Candy, type: :model do
       candy
       Review.create!(candy_id: 1, title: 'title', description: 'description', score: 1)
       Review.create!(candy_id: 1, title: 'title', description: 'description', score: 5)
-      expect(candy.avg_score).to eq(3.0)
+      expect(candy.avg_score).to eq 3.0
+    end
+    it 'returns 0 when there are no reviews' do
+      candy
+      expect(candy.avg_score).to eq 0
+    end
+    it 'returns 0 when there are some reviews but no ratings' do
+      candy
+      Review.create!(candy_id: 1, title: 'title', description: 'description', score: nil)
+      expect(candy.avg_score).to eq 0
     end
   end
 end

@@ -3,11 +3,13 @@ import axios from 'axios'
 
 import Header from './Header'
 import Candy from './Candy'
+import Loader from './loader'
 
 const Candies = () => {
     const [candies, setCandies] = useState([])
     const [gridSize, setGridSize] = useState(window.innerWidth * 0.6 )
     const [numOfColumns, setCol] = useState(gridSize / 350);
+    const [loaded, setLoaded] = useState(false);
     
     // controll the number of columns in the grid
     useEffect(() => {
@@ -29,6 +31,7 @@ const Candies = () => {
         axios.get('/api/v1/candies.json')
         .then(resp => {
             setCandies(resp.data.data)
+            setLoaded(true)
         })
         .catch( resp => console.log(resp))
 
@@ -40,10 +43,8 @@ const Candies = () => {
         <>
             <Header />
             <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
-            {
-                candies.map( candy => {
-                    return <Candy key={candy.attributes.slug} data={candy.attributes} />
-                })
+            {   
+                !loaded ? <Loader /> : candies.map( candy => <Candy key={candy.attributes.slug} data={candy.attributes} />)
             }
             </div>
         </>

@@ -20,8 +20,10 @@ const Review = props => {
     return (
         <div className='review'>
             <span className="review--name">{title}</span>
-            <span className="review--description">{description}</span>
-            <button className="btn-delete" onClick={handleDestroy}>delete</button>
+            <button className="btn btn-delete float-right" onClick={handleDestroy}>X</button>
+            <div className="review--description flex-row">
+                <p>{description}</p>
+            </div>
         </div>
     )
 }
