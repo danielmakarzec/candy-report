@@ -45,7 +45,7 @@ class Api::V1::CandiesController < ApplicationController
     private
 
     def candy_params
-        params.require(:candy).permit(:name, :image_url)
+        params.require(:candy).permit(:name, :about, :image_url)
     end
 
     def options

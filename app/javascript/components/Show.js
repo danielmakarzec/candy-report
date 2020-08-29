@@ -67,7 +67,7 @@ const Show = props => {
                 <>
                     <div className="show--about">
                         <div className="show--about-header">About</div>
-                        <div className="show--about-content">...some content.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tenetur quidem deleniti in maxime libero porro provident. Officia explicabo amet asperiores ad voluptate quibusdam, nostrum provident iste eveniet deserunt nulla.</div>
+                        <div className="show--about-content">{candy.attributes.about}</div>
                         <Link className="btn btn-back" to='/'>{'◄'} back</Link>
                     </div>
                     <div className='show--reviews'>
@@ -95,7 +95,6 @@ const Show = props => {
                                             setReviews={setReviews}
                                             setCandy={setCandy}
                                             updateAvgScore={updateAvgScore}
-                                            // candy={candy}
                                         />
                                     )
                                 })

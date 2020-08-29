@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Header from './Header'
-import Candy from './Candy'
+import CandyCard from './CandyCard'
 import Loader from './loader'
 
 const Candies = () => {
@@ -10,7 +10,7 @@ const Candies = () => {
     const [gridSize, setGridSize] = useState(window.innerWidth * 0.6 )
     const [numOfColumns, setCol] = useState(gridSize / 350);
     const [loaded, setLoaded] = useState(false);
-    
+
     // controll the number of columns in the grid
     useEffect(() => {
         function handleResize() {
@@ -44,7 +44,7 @@ const Candies = () => {
             <Header />
             <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
             {   
-                !loaded ? <Loader /> : candies.map( candy => <Candy key={candy.attributes.slug} data={candy.attributes} />)
+                !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} data={candy.attributes} />)
             }
             </div>
         </>
