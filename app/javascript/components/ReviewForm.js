@@ -2,35 +2,33 @@ import React, { useState, Fragment } from "react";
 import axios from 'axios';
 
 const ReviewForm = props => {
-    const { name, candy_id, reviews, setReviews } = props
+    const { reviews, setReviews, candy, setCandy, updateAvgScore } = props
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const [score, setScore] = useState('');
+    
+    const setRating = newScore => {
+        setScore(newScore)
+    }
 
-    // const ratingOptions = [5,4,3,2,1].map((score, index) => {
-    //     return (
-    //       <Fragment key={index}>
-    //         <input type="radio" value={score} checked={props.review.score == score} onChange={()=>console.log('onChange')} name="rating" id={`rating-${score}`}/>
-    //         <label onClick={props.setRating.bind(this, score)}></label>
-    //       </Fragment>
-    //     )
-    //   })
-
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault()
 
-        axios.post('/api/v1/reviews', { candy_id, title, description })
+        const crsfToken = document.querySelector('[name=csrf-token]').content
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = crsfToken
+
+        axios.post('/api/v1/reviews', { candy_id: candy.id, title, description, score })
             .then(resp => {
-                console.log(resp)
                 let newReviewId = resp.data.data.id
-                // let newReview = {  }
                 setReviews([
                     {
                         id: newReviewId,
                         type: 'review',
-                        attributes: { candy_id, title, description }
+                        attributes: { candy_id: candy.id, title, description, score }
                     },
                     ...reviews
                 ])
+                setCandy(updateAvgScore(score));
             })
             .catch((error) => {
                 console.log(error);
@@ -39,7 +37,17 @@ const ReviewForm = props => {
         // reset form
         setTitle('')
         setDescription('')
+        setScore(0)
     }
+
+    const ratingOptions = [5, 4, 3, 2, 1].map((newScore, index) => {
+        return (
+            <Fragment key={index}>
+                <input type="radio" value={score} checked={score == newScore} onChange={() => console.log('score:', newScore)} name="rating" id={`rating-${newScore}`} />
+                <label onClick={setRating.bind(this, newScore)}></label>
+            </Fragment>
+        )
+    })
 
     return (
         <form onSubmit={handleSubmit}>
@@ -53,7 +61,7 @@ const ReviewForm = props => {
             <div className='form--field'>
                 <div className='form--rating'>
                     <div className='form--rating-box'>
-                        {/* {ratingOptions} */}
+                        {ratingOptions}
                     </div>
                 </div>
             </div>
