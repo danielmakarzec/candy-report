@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Header from './Header'
+import Hero from './Hero'
 import CandyCard from './CandyCard'
 import Loader from './loader'
 
@@ -38,7 +39,8 @@ const Candies = () => {
 
     return (
         <>
-            <Header />
+            {/* <Header /> */}
+            <Hero />
             <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
             {   
                 !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} candy={candy} /> )

@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'HeroFont';
+    src: url('/assets/candypop.otf')  format('truetype');
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: .9;
+    font-family: 'HeroFont', Fallback, sans-serif;
+    font-size: 10em;
+    // color: purple;
+    // text-align: center;
+    // padding-top: 15%;
+    // clip-path: polygon(0 0, 100% 0, 100% 30%, 0 70%);
+}
+// .hero::before{
+//     content: '';
+//     position: absolute;
+//     background: aquamarine;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     top: 0;
+//     // clip-path: polygon(0 70%, 100% 30%, 100% 100%, 0 100%);
+// }
+// .hero::after{
+    //     content: 'Rate, Comment, Discover';
+    //     position: absolute;
+    //     top: 25%;
+    //     left: 0;
+    //     right: 0;
+    //     font-size: 72px;
+    //     padding: 0 100px;
+    //     color: grey;
+    // 
+// }
+.hero--content{
+    font-family: 'HeroFont';
+    font-size: 8rem;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    color: purple;
+    padding: 50px 100px;
+    text-align: center;
+    
+}
+.hero--content::before{
+    content: 'Rate, Comment, Discover';
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    font-size: 72px;
+    padding: 0 100px;
+    color: grey;
+}
+.btn-go-down {
+    position: absolute;
+    bottom: 5%;
+    left: calc(50% - 25px);
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(90deg);
+    font-size: 50px;
+    // border: 1px dotted;
+    // border-radius: 50%;
+    line-height: 50px;
+    padding: 5px;
+    animation: poulse 4s infinite;
+    // animation-iteration-count: infinite;
+}
+@keyframes poulse {
+    0%   {width: 60px; height: 60px}
+    20%   {width: 65px; height: 60px; font-size: 54px;}
+    30%   {width: 65px; height: 65px; font-size: 54px;}
+    60%   {width: 60px; height: 65px}
+    80%   {width: 60px; height: 65px}
+    100%   {width: 60px; height: 60px}
+  }
