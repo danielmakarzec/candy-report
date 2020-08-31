@@ -53,10 +53,24 @@ const ReviewForm = props => {
         <form onSubmit={handleSubmit}>
             <div className='form--header'>Write Your Review</div>
             <div className='form--field'>
-                <input autoFocus value={title} onChange={e => setTitle(e.target.value)} type="text" name="title" placeholder="Review Title" />
+                <input
+                    autoFocus
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                    type="text"
+                    name="title"
+                    placeholder="Review Title"
+                />
             </div>
             <div className='form--field'>
-                <textarea value={description} onChange={e => setDescription(e.target.value)} type="text" rows="10" name="description" placeholder="Review Description" />
+                <textarea
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                    type="text"
+                    rows="10"
+                    name="description"
+                    placeholder="Review Description"
+                />
             </div>
             <div className='form--field'>
                 <div className='form--rating'>
@@ -66,10 +80,6 @@ const ReviewForm = props => {
                 </div>
             </div>
             <button className='btn btn-submit' type="Submit">Create Review</button>
-            {
-                // error &&
-                // <div>{error}</div>
-            }
         </form>
     )
 }

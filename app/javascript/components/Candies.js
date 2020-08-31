@@ -26,17 +26,14 @@ const Candies = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // fetch candies
     useEffect(()=>{
-        // get candies from actionrecord
         axios.get('/api/v1/candies.json')
         .then(resp => {
             setCandies(resp.data.data)
             setLoaded(true)
         })
         .catch( resp => console.log(resp))
-
-        // update
-
     }, [candies.length])
 
     return (
@@ -44,7 +41,7 @@ const Candies = () => {
             <Header />
             <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
             {   
-                !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} data={candy.attributes} />)
+                !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} candy={candy} /> )
             }
             </div>
         </>
