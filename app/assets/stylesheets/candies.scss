@@ -8,7 +8,8 @@ $colNum: 5;
     // line-height: 0;
     // background: aquamarine;
     // margin: -18% auto;
-    margin: 5% auto;
+    margin: 0 auto;
+    padding-top: 7%;
     z-index: 99;
 }
 .row{
@@ -28,6 +29,7 @@ $colNum: 5;
 }
 .card--name{
     padding: 12px 0;
+    color: rgba(0,0,0,.7);
 }
 .card--img{
     width: 100%;
@@ -35,6 +37,7 @@ $colNum: 5;
 }
 .card--score{
     padding: 8px 0;
+    color: rgba(0,0,0,.7);
 }
 .card--link{
     width: 100%;

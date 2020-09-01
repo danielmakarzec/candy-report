@@ -7,6 +7,8 @@ const CandyCard = ({candy}) => {
     const {id, attributes } = candy
     const {name, slug, avg_score} = attributes
 
+    const link = slug !== '#grid' ? <Link className="card--link" to={`candies/${slug}`}>more</Link>
+: <a className="card--link" href='/#grid'>more</a>
     return (
         <div className="row">
             <div className='card grid-item'>
@@ -15,7 +17,9 @@ const CandyCard = ({candy}) => {
                 <div className="card--score">
                     <Rating score={avg_score} />
                 </div>
-                <Link className="card--link" to={`candies/${slug}`}>more</Link>
+                {
+                 link   
+                }
             </div>
         </div>
     )

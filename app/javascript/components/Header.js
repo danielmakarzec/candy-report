@@ -3,8 +3,11 @@ import React from 'react'
 const Header = () => {
     return (
         <div className='header'>
-            <h1>Candies Review</h1>
-            <h3>Review, Rate Comment</h3>
+           <h1>C🍭R</h1>
+           <div className="header--menu">
+               <div className='header--menu-item'>career</div>
+               <a href="#"><h1>☰</h1></a>
+           </div>
         </div>
     )
 }

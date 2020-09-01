@@ -39,8 +39,8 @@ const Candies = () => {
 
     return (
         <>
-            {/* <Header /> */}
-            <Hero />
+            <Header />
+            <Hero loaded={loaded} />
             <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
             {   
                 !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} candy={candy} /> )
