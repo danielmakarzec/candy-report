@@ -1,5 +1,6 @@
 class Api::V1::CandiesController < ApplicationController
-    protect_from_forgery with: :null_session
+    # protect_from_forgery with: :null_session
+    skip_before_action :verify_authenticity_token
 
     def index
         candies = Candy.all
