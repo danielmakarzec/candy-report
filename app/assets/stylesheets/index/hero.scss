@@ -31,9 +31,8 @@
     align-items: center;
 }
 .hero--content-main{
-    font-family: 'HeroFont';
+    font-family: 'Grandstander', cursive;
     font-size: 8rem;
-    line-height: 1.5em;
     text-align: center;
     color: deeppink;
     
@@ -61,5 +60,11 @@
     margin: 0 auto;
     & > .grid-item {
         transform: scale(1.6);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero--content-main{
+        font-size: 4em;
     }
 }

@@ -3,10 +3,10 @@ import React from 'react'
 const Header = () => {
     return (
         <div className='header'>
-           <h1>C🍭R</h1>
+           <h2>C🍭R</h2>
            <div className="header--menu">
-               <div className='header--menu-item'>career</div>
-               <a href="#"><h1>☰</h1></a>
+               <h2 className='header--menu-item'>career</h2>
+               <a href="#"><h2>☰</h2></a>
            </div>
         </div>
     )

@@ -13,7 +13,7 @@ const Hero = ({loaded}) => {
             }
             <div className="hero--row">
                 <div className="hero--col hero--content">
-                    <div className="hero--content-main">Candy Report</div>
+                    <div className="hero--content-main font-1">Candy Report</div>
                     <div className="hero--content-secondary">discover rate comment</div>
                 </div>
                 <div className="hero--col hero--card">

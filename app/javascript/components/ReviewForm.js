@@ -54,7 +54,6 @@ const ReviewForm = props => {
             <div className='form--header'>Write Your Review</div>
             <div className='form--field'>
                 <input
-                    autoFocus
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     type="text"
