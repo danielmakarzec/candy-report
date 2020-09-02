@@ -9,24 +9,24 @@ import Footer from './Footer';
 
 const Candies = () => {
     const [candies, setCandies] = useState([])
-    const [gridSize, setGridSize] = useState(window.innerWidth * 0.6 )
-    const [numOfColumns, setCol] = useState(gridSize / 350);
+    // const [gridSize, setGridSize] = useState(window.innerWidth * 0.6 )
+    // const [numOfColumns, setCol] = useState(gridSize / 350);
     const [loaded, setLoaded] = useState(false);
 
     // controll the number of columns in the grid
-    useEffect(() => {
-        function handleResize() {
-            let newGridSize = document.getElementById('grid') ? document.getElementById('grid').offsetWidth : 1;
-            let newNumOfCol = parseInt(newGridSize / 350);
-            setCol(newNumOfCol)
-        }
+    // useEffect(() => {
+    //     function handleResize() {
+    //         let newGridSize = document.getElementById('grid') ? document.getElementById('grid').offsetWidth : 1;
+    //         let newNumOfCol = parseInt(newGridSize / 350);
+    //         setCol(newNumOfCol)
+    //     }
     
-        window.addEventListener("resize", handleResize);
+    //     window.addEventListener("resize", handleResize);
     
-        handleResize();
+    //     handleResize();
     
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    //     return () => window.removeEventListener("resize", handleResize);
+    // }, []);
 
     // fetch candies
     useEffect(()=>{
@@ -42,7 +42,7 @@ const Candies = () => {
         <>
             <Header />
             <Hero loaded={loaded} />
-            <div id='grid' className="grid" style={{columnCount: `${numOfColumns}`}}>
+            <div id='grid' className="grid"  >
             {   
                 !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} candy={candy} /> )
             }

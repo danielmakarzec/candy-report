@@ -4,7 +4,7 @@ import Loader from './loader'
 
 const Hero = ({loaded}) => {
     const [windowWidth, set] = useState(window.innerWidth);
-    console.log(loaded);
+
     return (
         <>
             <div className="hero"></div>

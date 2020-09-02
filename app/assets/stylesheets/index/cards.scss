@@ -1,0 +1,27 @@
+.grid{
+    width: calc(900px + 6em);
+    column-count: 3;
+    margin: 0 auto;
+    padding-top: 7%;
+}
+.grid-item{
+    display: inline-block;
+    margin: 1em;
+    width: 300px;
+}
+
+@media screen and (max-width: 992px) {
+    .grid{
+        width: calc(600px + 4em);
+        column-count: 2;
+    }
+    .grid-item{
+        margin: 2em auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .grid{
+        width: calc(300px + 2em);
+        column-count: 1;
+    }
+}

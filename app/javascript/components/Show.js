@@ -63,7 +63,7 @@ const Show = props => {
                     }
                 </div>
             </div>
-            <div className="container flex-row">
+            <div className="container flex-row show--middle-section">
             {
                 loaded &&
                 <>
@@ -100,10 +100,10 @@ const Show = props => {
                             }
                         </div>
                     </div>
-                    <Footer />
                 </>
             }
             </div>
+            <Footer />
         </div>
     )
 }

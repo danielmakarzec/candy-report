@@ -1,0 +1,75 @@
+.show--body{
+    background: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.show--hero{
+    background: white;
+    // min-height: 25vh;
+    margin-bottom: 48px;
+}
+.show--img-container{
+    width: 60%;
+    min-height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.show--info{
+    width: 40%;
+    margin: 0 auto;
+    padding: 0 1em;
+    color: rgba(0,0,0,0.8);
+    *{
+        margin: 8px 0;
+    }
+}
+.show--name{
+    font-size: 1.4em;
+    text-align: center;
+}
+.show--stars{
+    position: relative;
+    font-size: 3em;
+    color: orange;
+}
+.show--score{
+    margin-right: 1em;
+}
+.show--middle-section{
+    flex-grow: 1;
+}
+.show--about{
+    position: relative;
+    width: 40%;
+    padding: 1em;
+}
+.show--about::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1px;
+    top: 1em;
+    bottom: 1em;
+    background: lightgrey;
+}
+.show--about-header{
+    font-size: 1.4em;
+}
+.show--about-content{
+    margin: 1em 1em 5em;
+}
+.show--reviews{
+    width: 60%;
+    padding: 0 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .show--img-container{
+        width: 100%;
+    }
+    .show--about, .show--reviews{
+        width: 100%;
+    }
+}
