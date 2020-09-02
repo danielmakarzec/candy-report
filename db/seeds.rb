@@ -21,7 +21,7 @@ candies = [
         id: 4,
         name: "Baby Ruth",
         about: "If you love the combination of peanuts and chocolate, like I do, then this one is for you.",
-        file: le=>"4"
+        file: "4"
         },
     {
         id: 5,
@@ -363,7 +363,7 @@ candies = [
         id: 61,
         name: "Warheads",
         about: "When they say EXTREME SOUR, they mean it. But if you can get past the outer coating of sour candy, the inside is sweet. Hang on; I know you can do it!",
-        file: le=>"61"
+        file: "61"
         },
     {
         id: 62,
