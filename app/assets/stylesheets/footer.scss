@@ -1,0 +1,16 @@
+.footer{
+    margin-top: 5%;
+    padding: 5% 0;
+    background: aquamarine;
+    color: rgba(0,0,0,0.8);
+}
+.footer--row{
+    padding: 1em;
+    & > a{
+        margin-left: 1em;
+        font-size: 1.3em;
+        text-decoration: none;
+        color: navy;
+        cursor: pointer;
+    }
+}

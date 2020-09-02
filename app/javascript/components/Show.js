@@ -4,9 +4,11 @@ import { Cloudinary } from 'cloudinary-core';
 const cloudinaryCore = new Cloudinary({cloud_name: 'djdfxltaw'});
 import axios from 'axios';
 
-import ReviewForm from './ReviewForm'
-import Review from './Review'
-import Rating from './Rating'
+import ReviewForm from './ReviewForm';
+import Review from './Review';
+import Rating from './Rating';
+import Header from './Header';
+import Footer from './Footer';
 
 const Show = props => {
     const [candy, setCandy] = useState({});
@@ -42,7 +44,7 @@ const Show = props => {
 
     return (
         <div className='show--body'>
-            <div style={{height: '5vh', background: 'aquamarine'}}></div> {/* temporary */}
+            <Header />
             <div className="show--hero">
                 <div className="container flex-row">
                     {
@@ -98,6 +100,7 @@ const Show = props => {
                             }
                         </div>
                     </div>
+                    <Footer />
                 </>
             }
             </div>

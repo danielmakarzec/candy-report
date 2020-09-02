@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import Header from './Header'
-import Hero from './Hero'
-import CandyCard from './CandyCard'
-import Loader from './loader'
+import Header from './Header';
+import Hero from './Hero';
+import CandyCard from './CandyCard';
+import Loader from './loader';
+import Footer from './Footer';
 
 const Candies = () => {
     const [candies, setCandies] = useState([])
@@ -46,6 +47,7 @@ const Candies = () => {
                 !loaded ? <Loader /> : candies.map( candy => <CandyCard key={candy.attributes.slug} candy={candy} /> )
             }
             </div>
+            <Footer />
         </>
     )
 }
