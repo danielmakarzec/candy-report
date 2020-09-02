@@ -10,7 +10,7 @@
 .hero::before{
     content: '';
     position: absolute;
-    background-image: url('candy_hero2.jpg');
+    background-image: image-url('candy_hero2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -29,9 +29,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-.hero--col{
-    // text-align: center;
 }
 .hero--content-main{
     font-family: 'HeroFont';
