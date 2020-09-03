@@ -14,12 +14,12 @@ const Hero = ({loaded}) => {
             <div className="hero--row">
                 <div className="hero--col hero--content">
                     <div className="hero--content-main font-1">Candy Report</div>
-                    <div className="hero--content-secondary">discover rate comment</div>
+                    <div className="hero--content-secondary">Rate Comment Discover</div>
                 </div>
                 <div className="hero--col hero--card">
                     <div className="hero--candy-example">
                     {
-                        loaded && windowWidth > 1024 ?
+                        windowWidth > 1024 ?
                             <CandyCard candy={
                                 {id: 0,
                                 attributes: {

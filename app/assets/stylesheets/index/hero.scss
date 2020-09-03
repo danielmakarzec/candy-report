@@ -40,7 +40,7 @@
 .hero--content-secondary{
     font-family: sans-serif;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3vw;
     letter-spacing: 4px;
     color: lightpink;
 }
@@ -64,6 +64,9 @@
 }
 
 @media screen and (max-width: 992px) {
+    .hero--content{
+        width: 80%;
+    }
     .hero--content-main{
         font-size: 4em;
     }

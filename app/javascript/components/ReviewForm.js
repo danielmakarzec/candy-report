@@ -43,7 +43,13 @@ const ReviewForm = props => {
     const ratingOptions = [5, 4, 3, 2, 1].map((newScore, index) => {
         return (
             <Fragment key={index}>
-                <input type="radio" value={score} checked={score == newScore} onChange={() => console.log('score:', newScore)} name="rating" id={`rating-${newScore}`} />
+                <input type="radio"
+                       id={`rating-${newScore}`}
+                       name="rating"
+                       value={score}
+                       checked={score == newScore}
+                       onChange={() => console.log('score:', newScore)}
+                />
                 <label onClick={setRating.bind(this, newScore)}></label>
             </Fragment>
         )
@@ -58,7 +64,7 @@ const ReviewForm = props => {
                     onChange={e => setTitle(e.target.value)}
                     type="text"
                     name="title"
-                    placeholder="Review Title"
+                    placeholder="What's your name?"
                 />
             </div>
             <div className='form--field'>
@@ -68,7 +74,7 @@ const ReviewForm = props => {
                     type="text"
                     rows="10"
                     name="description"
-                    placeholder="Review Description"
+                    placeholder="Leave your comment here"
                 />
             </div>
             <div className='form--field'>

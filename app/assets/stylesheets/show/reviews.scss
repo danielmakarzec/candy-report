@@ -20,7 +20,7 @@
             left: -1em;
             top: -6px;
             font-size: 2em;
-            color: rgba(0,0,0,0.6);
+            color: rgba(0,0,0,0.15);
         }
         &::after{
             content: '❞';
@@ -28,7 +28,14 @@
             right: -1em;
             top: -6px;
             font-size: 2em;
-            color: rgba(0,0,0,0.6);
+            color: rgba(0,0,0,0.15);
+        }
+    }
+}
+@media only screen and (max-width: 992px) {
+    .review .review--description p{
+        &::after{
+            top: auto;
         }
     }
 }
