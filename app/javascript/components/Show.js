@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Cloudinary } from 'cloudinary-core';
 const cloudinaryCore = new Cloudinary({cloud_name: 'djdfxltaw'});
 import axios from 'axios';
@@ -17,6 +17,8 @@ const Show = props => {
     const totalReviews = reviews.length || 0;
     const bgImage = cloudinaryCore.url(`candies/${candy.id}`);
 
+    let history = useHistory();
+    console.log(history)
     useEffect(() => {
         const slug = props.match.params.slug;
         const url = `/api/v1/candies/${slug}.json`;
@@ -70,7 +72,7 @@ const Show = props => {
                     <div className="show--about">
                         <div className="show--about-header">About</div>
                         <div className="show--about-content">{candy.attributes.about}</div>
-                        <Link className="btn btn-back" to='/'>{'◄'} back</Link>
+                        <Link className="btn btn-back" to='/#root'>{'◄'} back</Link>
                     </div>
                     <div className='show--reviews'>
                         <ReviewForm
