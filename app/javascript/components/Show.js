@@ -7,7 +7,7 @@ import axios from 'axios';
 import ReviewForm from './ReviewForm';
 import Review from './Review';
 import Rating from './Rating';
-import Header from './Header';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Show = props => {
@@ -44,7 +44,7 @@ const Show = props => {
 
     return (
         <div className='show--body'>
-            <Header />
+            <Navbar />
             <div className="show--hero">
                 <div className="container flex-row">
                     {

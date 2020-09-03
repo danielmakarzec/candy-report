@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Header from './Header';
+import Navbar from './Navbar';
 import Hero from './Hero';
 import CandyCard from './CandyCard';
 import Loader from './loader';
@@ -23,7 +23,7 @@ const Candies = () => {
 
     return (
         <>
-            <Header />
+            <Navbar />
             <Hero loaded={loaded} />
             <div id='grid' className="grid"  >
             {   
